@@ -10,6 +10,9 @@
 		 
 		 <input type = "submit" />
 		 
+		 <br>
+		 <img src="${pageContext.request.contextPath}/assets/pics/logo.bmp">
+		 
 	</form>
 	</body>
 </html>
