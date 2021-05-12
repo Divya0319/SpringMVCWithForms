@@ -26,6 +26,11 @@
 	
 	<br><br>
 	
+	Free Passes: <form:input path="freePasses"/>  <!-- "freePass" its the field name created in customer class --> 
+	<form:errors path = "freePasses" cssClass="error" />	
+	
+	<br><br>
+	
 	<input type="submit" value="Submit" />
 
 </form:form>
