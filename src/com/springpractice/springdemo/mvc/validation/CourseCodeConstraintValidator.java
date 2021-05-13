@@ -7,11 +7,11 @@ public class CourseCodeConstraintValidator
 		implements ConstraintValidator<CourseCode, String> {
 
 	
-	private String coursePrefix;
+	private String[] coursePrefixes;
 	
 	@Override
 	public void initialize(CourseCode theCourseCode) {
-		coursePrefix = theCourseCode.value();
+		coursePrefixes = theCourseCode.value();
 		
 	}
 	
@@ -20,11 +20,23 @@ public class CourseCodeConstraintValidator
 	public boolean isValid(String theCode, ConstraintValidatorContext thConstraintValidatorContext) {
 		
 		
-		boolean result;
+		boolean result = false;
 		
 		if(theCode != null) {
-			 result = theCode.startsWith(coursePrefix);
-			 return result;
+			
+			// loop thru course prefixes
+			
+			// check if the code matches any of the prefix
+			for(String tempPrefix:coursePrefixes){
+				
+				result = theCode.startsWith(tempPrefix);
+				
+				if(result) {
+					break;
+				}
+				
+			}
+			 
 		} 
 		else {
 			
